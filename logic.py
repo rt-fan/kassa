@@ -5,8 +5,10 @@ date_text = {1: "Января", 2: "Февраля", 3: "Марта", 4: "Апр
 yy = 2021
 mm = 1
 dd = 1
-balance = 8400
+balance = 2500
 tarif = 700
+fix_ip = [0, 2, 6]
+ip_index = 2
 
 while True:
 
@@ -14,9 +16,11 @@ while True:
   # pay - ежедневный платеж
   # work_days -  дни за оплату
   # days_left - дней до конца месяца
+  # fix_ip - список с оплатой за фиксированный ip-адрес (без оплаты, 2₽, 6₽)
+  # ip_index - индекс для списка с фиксированным ip-адресом
 
   days = calendar.monthrange(yy, mm)[1]  # 31 день в январе
-  pay = tarif / days # 22,58₽ за янв
+  pay = (tarif / days) + fix_ip[ip_index]  # 22,58₽ за янв + 2₽ за внешний ip
 
   print("Проверяю...")
   if balance / pay <= (days - dd) + 1:  # остаемся в этом месяце
@@ -31,9 +35,9 @@ while True:
         mm = 1
         yy += 1
 
-
     request = "Отключение {} {} {}".format(int(dd), date_text[mm], yy)
     print(request)
+    print(fix_ip[2])
     break
 
   else: # переходим в след месяц
@@ -51,3 +55,7 @@ while True:
     if mm > 12:
       mm = 1
       yy += 1
+
+  print("")
+  print("#" * 30)
+  print("")
