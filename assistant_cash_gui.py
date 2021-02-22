@@ -43,56 +43,56 @@ class Example(Frame):  # окно открывается
 
         # Версия  ====================================================================================================:
 
-        version = Label(self, text="v0.2", background="#8E9B97", foreground="#537072")
+        version = Label(self, text="v0.4", background="#8E9B97", foreground="#537072")
         version.place(x=290, y=5)
 
         # Дата  ======================================================================================================:
 
-        label_dd = Label(self, text="Число:", background="#8E9B97", font=14)
+        label_dd = Label(self, text="Число:", background="#8E9B97", font=("Arial", 12))
         label_dd.place(x=20, y=15)
-        entry_dd = Entry(self, width=6, font=14, selectbackground="#537072", )
+        entry_dd = Entry(self, width=6, font=("Arial", 12), selectbackground="#537072", )
         entry_dd.place(x=20, y=40)
         entry_dd.insert(0, date_today.day)
 
-        label_mm = Label(self, text="Месяц:", background="#8E9B97", font=14)
+        label_mm = Label(self, text="Месяц:", background="#8E9B97", font=("Arial", 12))
         label_mm.place(x=95, y=15)
-        combo_mm = ttk.Combobox(self, values=list(variants.keys()), state="readonly", width=9, font=14)
+        combo_mm = ttk.Combobox(self, values=list(variants.keys()), state="readonly", width=9, font=("Arial", 12))
         combo_mm.place(x=95, y=39)
         combo_mm.current(date_today.month-1)
 
-        label_yy = Label(self, text="Год:", background="#8E9B97", font=14)
+        label_yy = Label(self, text="Год:", background="#8E9B97", font=("Arial", 12))
         label_yy.place(x=215, y=15)
-        entry_yy = Entry(self, width=6, font=14, selectbackground="#537072")
+        entry_yy = Entry(self, width=6, font=("Arial", 12), selectbackground="#537072")
         entry_yy.place(x=215, y=40)
         entry_yy.insert(0, date_today.year)
 
         # Суммы  =====================================================================================================:
 
-        label_ostatok = Label(self, text="Остаток на балансе:", background="#8E9B97", font=14)
+        label_ostatok = Label(self, text="Остаток на балансе:", background="#8E9B97", font=("Arial", 12))
         label_ostatok.place(x=20, y=100)
-        entry_ostatok = Entry(self, width=10, font=14, selectbackground="#537072")
+        entry_ostatok = Entry(self, width=10, font=("Arial", 12), selectbackground="#537072")
         entry_ostatok.place(x=178, y=100)
         entry_ostatok.insert(0, "0")
 
-        label_oplata = Label(self, text="Сумма оплаты:", background="#8E9B97", font=14)
-        label_oplata2 = Label(self, text="(с подарочными)", background="#8E9B97")
+        label_oplata = Label(self, text="Сумма оплаты:", background="#8E9B97", font=("Arial", 12))
+        label_oplata2 = Label(self, text="(с подарочными)", background="#8E9B97", font=("Arial", 9))
         label_oplata.place(x=20, y=140)
         label_oplata2.place(x=20, y=160)
-        entry_oplata = Entry(self, width=10, font=14, selectbackground="#537072")
+        entry_oplata = Entry(self, width=10, font=("Arial", 12), selectbackground="#537072")
         entry_oplata.place(x=178, y=140)
         entry_oplata.insert(0, "0")
 
-        label_osn_tarif = Label(self, text="Введите тариф:", background="#8E9B97", font=14)
+        label_osn_tarif = Label(self, text="Введите тариф:", background="#8E9B97", font=("Arial", 12))
         label_osn_tarif.place(x=20, y=200)
-        entry_osn_tarif = Entry(self, width=10, font=14, selectbackground="#537072")
+        entry_osn_tarif = Entry(self, width=10, font=("Arial", 12), selectbackground="#537072")
         entry_osn_tarif.place(x=178, y=200)
         entry_osn_tarif.insert(0, "0")
 
-        label_dop_tarif = Label(self, text="Доп. оплаты:", background="#8E9B97", font=14)
+        label_dop_tarif = Label(self, text="Доп. оплаты:", background="#8E9B97", font=("Arial", 12))
         label_dop_tarif.place(x=20, y=240)
-        label_dop_tarif2 = Label(self, text="(wi-fi авторизация и др.)", background="#8E9B97")
+        label_dop_tarif2 = Label(self, text="(wi-fi авторизация и др.)", background="#8E9B97", font=("Arial", 9))
         label_dop_tarif2.place(x=20, y=260)
-        entry_dop_tarif = Entry(self, width=10, font=14, selectbackground="#537072")
+        entry_dop_tarif = Entry(self, width=10, font=("Arial", 12), selectbackground="#537072")
         entry_dop_tarif.place(x=178, y=240)
         entry_dop_tarif.insert(0, "0")
 
@@ -102,15 +102,18 @@ class Example(Frame):  # окно открывается
         index_fix_ip = IntVar()
 
         pay_ip_0 = Radiobutton(text="Без фиксированного ip-адреса", value=0,
-                               variable=index_fix_ip,  activebackground="#8E9B97", bg="#8E9B97")
+                               variable=index_fix_ip,  activebackground="#8E9B97",
+                               bg="#8E9B97", font=("Arial", 9))
         pay_ip_0.place(x=20, y=300)
 
         pay_ip_2 = Radiobutton(text="Старый тариф  (2 р/сутки)", value=1,
-                               variable=index_fix_ip, activebackground="#8E9B97", bg="#8E9B97")
+                               variable=index_fix_ip, activebackground="#8E9B97",
+                               bg="#8E9B97", font=("Arial", 9))
         pay_ip_2.place(x=20, y=330)
 
         pay_ip_6 = Radiobutton(text="Новый тариф  (6  р/сутки)", value=2,
-                               variable=index_fix_ip, activebackground="#8E9B97", bg="#8E9B97")
+                               variable=index_fix_ip, activebackground="#8E9B97",
+                               bg="#8E9B97", font=("Arial", 9))
         pay_ip_6.place(x=20, y=360)
 
         # # Поле отображения логов  ==================================================================================:
@@ -137,7 +140,7 @@ class Example(Frame):  # окно открывается
                 tarif = osn_tarif + dop_tarif
 
                 while True:
-                    # Исключения
+                    # Исключения:
                     if dd == 0:
                         messagebox.showinfo(title="Ошибка", message="Введите корректную дату!")
                         break
@@ -158,16 +161,8 @@ class Example(Frame):  # окно открывается
                         messagebox.showinfo(title="Ошибка", message="Оплата не может быть отрицательной!")
                         break
 
-                    if osn_tarif == 0:
-                        messagebox.showinfo(title="Ошибка", message="Тариф не может равняться нулю!")
-                        break
-                    
-                    if osn_tarif < 0:
-                        messagebox.showinfo(title="Ошибка", message="Тариф не может быть отрицательным!")
-                        break
-                    
-                    if osn_tarif < 0:
-                        messagebox.showinfo(title="Ошибка", message="Тариф не может быть отрицательным!")
+                    if osn_tarif <= 0:
+                        messagebox.showinfo(title="Ошибка", message="Тариф не может равняться или быть ниже нуля!")
                         break
 
                     if dop_tarif < 0:
@@ -189,13 +184,13 @@ class Example(Frame):  # окно открывается
                         print("#" * 30)
                         print("ОСТАЕМСЯ")
                         print("Баланс:  ", balance)
-                        print("Количество дней:  ", days)
-                        print("Ежедневная оплата (осн, внешн):  ", pay, "(", tarif / days, ",", pay_fix_ip, ")")
+                        print("Количество дней в этом месяце: ", days)
+                        print("Ежедневная оплата (осн, внешн): ", pay, "(", tarif / days, ",", pay_fix_ip, ")")
                         work_days = balance / pay  # на столько дней хватает оплаты в этом месяце
                         print("Будет работать дней в этом месяце: ", int(work_days))
-                        dd += work_days  # прибавляем к дате оплаченные дни
-                        print("Будет работать на сумму", int(work_days) * pay)
-                        print("Остаток:  ", balance - (int(work_days) * pay))
+                        dd += int(work_days)  # прибавляем к дате оплаченные дни
+                        print("Будет работать на сумму: ", int(work_days) * pay)
+                        print("Остаток: ", balance - (int(work_days) * pay))
                         print("\n")
                         if dd > days:  # если дней получилось больше чем дней в месяце:
                             dd = 1
@@ -232,9 +227,9 @@ class Example(Frame):  # окно открывается
                 messagebox.showinfo(title="Ошибка", message="Ошибка. Введите числовые значения!")
 
         # Кнопка  ====================================================================================================:
-        btn = Button(self, width=32, height=2, text="РАСЧИТАТЬ", command=logic, relief=GROOVE,
-                     background="#8E9B97", font=14)
-        btn.place(x=11, y=410)
+        btn = Button(self, width=22, height=2, text="РАСЧИТАТЬ", command=logic, relief=GROOVE,
+                     background="#8E9B97", font=("Arial", 16, "bold"))
+        btn.place(x=12, y=400)
         #  ===========================================================================================================
 
 
