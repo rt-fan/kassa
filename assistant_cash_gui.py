@@ -137,6 +137,7 @@ class Example(Frame):  # окно открывается
                 tarif = osn_tarif + dop_tarif
 
                 while True:
+                    # Исключения
                     if dd == 0:
                         messagebox.showinfo(title="Ошибка", message="Введите корректную дату!")
                         break
@@ -165,7 +166,6 @@ class Example(Frame):  # окно открывается
                         messagebox.showinfo(title="Ошибка", message="Тариф не может быть отрицательным!")
                         break
                     
-
                     if osn_tarif < 0:
                         messagebox.showinfo(title="Ошибка", message="Тариф не может быть отрицательным!")
                         break
