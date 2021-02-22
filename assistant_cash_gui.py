@@ -153,8 +153,25 @@ class Example(Frame):  # окно открывается
                         messagebox.showinfo(title="Ошибка", message="Введите корректный год!")
                         break
 
+                    if oplata < 0:
+                        messagebox.showinfo(title="Ошибка", message="Оплата не может быть отрицательной!")
+                        break
+
                     if osn_tarif == 0:
                         messagebox.showinfo(title="Ошибка", message="Тариф не может равняться нулю!")
+                        break
+                    
+                    if osn_tarif < 0:
+                        messagebox.showinfo(title="Ошибка", message="Тариф не может быть отрицательным!")
+                        break
+                    
+
+                    if osn_tarif < 0:
+                        messagebox.showinfo(title="Ошибка", message="Тариф не может быть отрицательным!")
+                        break
+
+                    if dop_tarif < 0:
+                        messagebox.showinfo(title="Ошибка", message="Доп оплата не может быть отрицательной!")
                         break
 
                     # days - количество дней в месяце
